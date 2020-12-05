@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service PlaylistService {
+  rpc UserPlaylists (GetUserPlaylist) returns (PlaylistList);
+}
+
+message Playlist {
+  string id = 1;
+  string name = 2;
+  string userId = 3;
+}
+
+message PlaylistList {
+  repeated Playlist playlists = 1;
+}
+
+message GetUserPlaylist {
+  string userId = 1;
+}
